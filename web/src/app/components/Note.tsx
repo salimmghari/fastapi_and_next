@@ -29,7 +29,7 @@ const Note = async (props: NoteProps): Promise<JSX.Element> => {
         'use server';
         if (formData.get('action') === 'create') {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/notes/', {
+                await fetch('http://127.0.0.1:8000/api/notes/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const Note = async (props: NoteProps): Promise<JSX.Element> => {
             }
         } else if (formData.get('action') === 'update') {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/notes/${props.id}/`, {
+                await fetch(`http://127.0.0.1:8000/api/notes/${props.id}/`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -60,9 +60,6 @@ const Note = async (props: NoteProps): Promise<JSX.Element> => {
                         body: formData.get('body')
                     })
                 })
-                if (response.ok) {
-                    revalidatePath('/')
-                }
             } catch (error) {
                 console.error(error);
             } finally {
@@ -70,7 +67,7 @@ const Note = async (props: NoteProps): Promise<JSX.Element> => {
             }
         } else if (formData.get('action') === 'delete') {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/notes/${props.id}/`, {
+                await fetch(`http://127.0.0.1:8000/api/notes/${props.id}/`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -78,9 +75,6 @@ const Note = async (props: NoteProps): Promise<JSX.Element> => {
                         'Authorization': `Bearer ${accessToken}`
                     }
                 })
-                if (response.ok) {
-                    revalidatePath('/')
-                }
             } catch (error) {
                 console.error(error);
             } finally {

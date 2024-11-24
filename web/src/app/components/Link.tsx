@@ -14,7 +14,7 @@ const Link = (props: LinkProps): JSX.Element => {
     return (
         <p 
             className="mb-6 info-color text-base cursor-pointer text-center"
-            onClick={(event: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => router.push(props.path)}
+            onClick={() => router.push(props.path)}
         >
             {props.children}
         </p>

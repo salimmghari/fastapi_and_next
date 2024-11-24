@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">fastapi_and_next</string>
+    <string name="main_activity_title">fastapi_and_next</string>
+</resources>

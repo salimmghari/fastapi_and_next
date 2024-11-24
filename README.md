@@ -32,6 +32,9 @@ Developed by Salim Mghari
 > - `cd web/`
 > - `npm install`
 > - `npm run dev`
+> - `npm run desktop`
+> - `npm run android`
+> - `npm run ios`
 
 ---
 
