@@ -5,10 +5,10 @@ interface FormProps {
     children?: React.ReactNode;
 }
 
-const Form = (props: FormProps): JSX.Element => {
+const Form = async (props: FormProps): Promise<JSX.Element> => {
   return (
     <form 
-        className="w-full p-10 secondary-bg-color rounded-md primary-border shadow-lg"
+        className="w-full mb-8 p-10 secondary-bg-color rounded-md primary-border shadow-lg"
         action={props.action}
     >
       {props.children}

@@ -4,7 +4,7 @@ interface TitleProps {
     children?: React.ReactNode;
 }
 
-const Title = (props: TitleProps): JSX.Element => {
+const Title = async (props: TitleProps): Promise<JSX.Element> => {
     return (
         <h2 className="text-2xl mb-6 text-center">
             {props.children}
